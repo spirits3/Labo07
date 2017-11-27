@@ -206,3 +206,35 @@ void printCell(int value, int width) {
 void printCell(char value, int width) {
     cout << right << setw(width) << value;
 }
+
+void eachElementByRandom(int tab[], unsigned throws, unsigned elements) {
+    
+    for(int i = 0; i < throws; ++i) {
+        tab[randomInt(0, elements)]++;
+    }
+}
+
+void calculPercentage(int tab[], unsigned throws) {
+
+    eachElementByRandom(tab, throws);
+    
+    for(int i = 0; i < throws; ++i) {
+        tab[i] /= throws;
+    }
+}
+
+
+void arrayDisplayer(int tab[], unsigned elements) {
+
+    for(int i = 0; i < elements; ++i) {
+        tab[i] = value;
+    }
+}
+
+void equalDisplayer() {
+
+    for(int i = 0; i < randomFunction; ++i) {
+        cout << "=";
+    }
+    cout << endl;
+}

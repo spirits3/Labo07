@@ -54,4 +54,6 @@ void getEuropeanDate(int& day, int& month, int& year, int min_year, int max_year
 void printCell(int value, int width);
 void printCell(char value, int width);
 
+void arrayDisplayer(int tab[], unsigned size);
+
 #endif
