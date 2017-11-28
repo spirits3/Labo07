@@ -215,15 +215,17 @@ void equalDisplayer(unsigned percentage) {
     for(int i = 0; i < percentage; ++i) {
         cout << "=";
     }
+
     cout << endl;
 }
 
 void arrayDisplayer(unsigned int tab[], unsigned throws, unsigned elements) {
 
     for(int i = 0; i < elements; ++i) {
-        cout << "Tableau [" << i << "]      "  << setw(5) << left << tab[i] ;
+        cout << "Tableau [" << i << "]      " << setw(5) << left << tab[i] ;
         equalDisplayer(tab[i]);
     }
+
     cout << endl;
 }
 
