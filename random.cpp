@@ -2,12 +2,12 @@
  -----------------------------------------------------------------------------------
  Laboratory : 07 generateur aleatoire
  File       : random.cpp
- Author(s)  : Fulgencio Esteves Jorge-Andre
+ Author(s)  : Fulgencio Esteves Jorge-Andre, Schaufelberger Florian
  Date       : 27.11.2017
 
- Aim        :
+ Aim        : Function library for random number generation
 
- Comment(s) :
+ Comment(s) : Seeded once per function
 
  Compiler   : MinGW-g++ 4.9.2
  -----------------------------------------------------------------------------------
@@ -25,6 +25,7 @@
   */
 int randomInt(int lowerBound = 0, int upperBound = RAND_MAX) {
 	static bool seeded = false;
+
 	if (!seeded) {
 		srand(time(nullptr));
 		seeded = true;
