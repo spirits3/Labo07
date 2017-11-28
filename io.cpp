@@ -1,30 +1,17 @@
 /*
 --------------------------------------------------------------------------------------------------------
-Laboratory : 05 Calendar
+Laboratory : 07 generateur aleatoire
 File       : io.cpp
 Author(s)  : Jonathan Zaehringer, Pierre Kohler
-Date       : 1.11.2017
+Last
+Modified by: Florian Schaufelberger, Fulgencio Esteves Jorge-André
+Date       : 28.11.2017
 
 Aim        : Library to interacte with user and display a table
 
 Comment(s) : 
-
-Compiler   : Apple LLVM version 8.0.0 (clang-800.0.42.1) or MinGW-g++ 4.9.2 
-
-UPDATE
---------------------------------------------------------------------------------------------------------
-Laboratory : 06 Number of Day
-File       : io.cpp
-Author(s)  : Jonathan Zaehringer, Florian Schaufelberger
-Date       : 20.11.2017
-
-Aim        : Not changed
-
-                Adding function to get Date from user
-
-Comment(s) : Using date library to manipulate date from user
-
-Compiler   : Apple LLVM version 8.0.0 (clang-800.0.42.1) or g++ (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0
+Modifications : Addition of an array displaying method
+Compiler   : MinGW-g++ 4.9.2
 --------------------------------------------------------------------------------------------------------
 */
 #include <iostream>
@@ -219,7 +206,6 @@ void equalDisplayer(unsigned percentage) {
 }
 
 void arrayDisplayer(unsigned int tab[], unsigned throws, unsigned elements) {
-
     for(int i = 0; i < elements; ++i) {
         cout << "Tableau [" << i << "]      "  << setw(5) << left << tab[i] ;
         equalDisplayer(tab[i]);
