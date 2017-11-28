@@ -26,7 +26,7 @@ int main(){
 	const unsigned int ELEMENTS_MIN = 0,
 					   ELEMENTS_MAX = 100,
 					   TRIES_MIN = 0,
-					   TRIES_MAX = 1000;
+					   TRIES_MAX = 10000;
 	const char YES = 'o',
 			    NO = 'n';
 	const string QUESTION_REDO     = string("Voulez-vous recommencer [") + YES + "," + NO +"] ? :";
