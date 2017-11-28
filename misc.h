@@ -24,29 +24,36 @@ Compiler   : Apple LLVM version 8.0.0 (clang-800.0.42.1) or MinGW-g++ 4.9.2
 #define unless(x) if(!(x))
 #define until(x) while(!(x))
 
-/**
- * Determines whether a integer is contained in a interval
- *
- * @param x
- * @param min
- * @param max
- */
+ /**
+  * returns a bool to know if our value is between our bounds
+  *
+  * @param x			the value we want to know if it's between our bounds.
+  * @param min			the minimal bound 
+  * @param max			the maximal bound 
+  *
+  * @return 	return a bool if our value is between our bounds
+  */
 bool isBetween(int x, int min, int max);
 
-/**
- * Generates a number of random generated throws and counts each appearance of a certain
- * random element and stores it at a tab index.
- *
- * @param tab		the array containing the number of apperance of a certain number
- * 					tab[i] will contain the number of times 0 appeared in x throws
- * @param throws	the total number of randomly generated numbers
- * @param elements	the number of elements in the array also the range for the random generation
- */
+ /**
+  * will increase the number of time our elements of tab was call by a random function
+  *
+  * @param tab			tab where we will increase our value.
+  * @param throws		number of times we will throw our dice and will give us a random number
+  * @param elements		number of elements in our tab 
+  *
+  */
 void eachElementByRandom(unsigned int tab[], unsigned int throws, unsigned elements);
 
-/**
- *
- */
+
+ /**
+  * will calculate the percentage of how many throws was the same as one of our element.
+  *
+  * @param tab			tab where we will increase our value.
+  * @param throws		number of times we will throw our dice and will give us a random number
+  * @param elements		number of elements in our tab 
+  *
+  */
 void calculPercentage(unsigned int tab[], unsigned int throws, unsigned elements);
 
 #endif
