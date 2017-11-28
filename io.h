@@ -37,8 +37,8 @@ Compiler   : Apple LLVM version 8.0.0 (clang-800.0.42.1) or g++ (Ubuntu 5.4.0-6u
 // ---------------------
 // User input functions
 // ---------------------
-unsigned char getChar(const std::string& question); 
-int getInt(const std::string& question); 
+unsigned char getChar(const std::string& question);
+int getInt(const std::string& question);
 int getIntBetween(int min, int max, const std::string& question);
 
 bool wantsUserRedo(const unsigned char& yes,const unsigned char& no, const std::string& question);
@@ -54,6 +54,6 @@ void getEuropeanDate(int& day, int& month, int& year, int min_year, int max_year
 void printCell(int value, int width);
 void printCell(char value, int width);
 
-void arrayDisplayer(int tab[], unsigned size);
+void arrayDisplayer(unsigned int tab[], unsigned throws, unsigned elements);
 
 #endif

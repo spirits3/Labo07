@@ -13,9 +13,34 @@ Compiler   : Apple LLVM version 8.0.0 (clang-800.0.42.1) or g++ (Ubuntu 5.4.0-6u
 --------------------------------------------------------------------------------------------------------
 */
 
+
+#include <iostream>
+#include <cstdlib>	
+
 #include "misc.h"
+#include "random.h"
+
+using namespace std;
 
 bool isBetween (int x, int min, int max) {
     return x >= min && x <= max;
 }
 
+void eachElementByRandom(unsigned int tab[], unsigned int throws, unsigned elements) {
+    
+    for(int i = 0; i < throws; ++i) {
+           cout << "avant" << tab[i] << endl;
+           tab[randomInt(0, elements)] = tab[randomInt(0, elements)] + 1;
+        cout << "apres" << tab[i] << endl;
+    }
+}
+
+void calculPercentage(unsigned int tab[], unsigned int throws, unsigned elements) {
+
+    eachElementByRandom(tab, throws, elements);
+    
+    for(int i = 0; i < throws; ++i) {
+        tab[i] /= throws;
+    }
+    cout << "calculPercentage";
+}

@@ -35,9 +35,7 @@ Compiler   : Apple LLVM version 8.0.0 (clang-800.0.42.1) or g++ (Ubuntu 5.4.0-6u
 
 bool isBetween(int x, int min, int max);
 
-void eachElementByRandom(int tab[], unsigned throws, unsigned elements);
-void calculPercentage(int tab[], unsigned throws);
-void equalDisplayer();
-
+void eachElementByRandom(unsigned int tab[], unsigned int throws, unsigned elements);
+void calculPercentage(unsigned int tab[], unsigned int throws, unsigned elements);
 
 #endif

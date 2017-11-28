@@ -33,8 +33,11 @@ Compiler   : Apple LLVM version 8.0.0 (clang-800.0.42.1) or g++ (Ubuntu 5.4.0-6u
 
 #include "date.h"
 #include "misc.h"
+#include "random.h"
 
 #include "io.h"
+
+
 
 using namespace std;
 
@@ -207,34 +210,20 @@ void printCell(char value, int width) {
     cout << right << setw(width) << value;
 }
 
-void eachElementByRandom(int tab[], unsigned throws, unsigned elements) {
-    
-    for(int i = 0; i < throws; ++i) {
-        tab[randomInt(0, elements)]++;
-    }
-}
+void equalDisplayer(unsigned percentage) {
 
-void calculPercentage(int tab[], unsigned throws) {
-
-    eachElementByRandom(tab, throws);
-    
-    for(int i = 0; i < throws; ++i) {
-        tab[i] /= throws;
-    }
-}
-
-
-void arrayDisplayer(int tab[], unsigned elements) {
-
-    for(int i = 0; i < elements; ++i) {
-        tab[i] = value;
-    }
-}
-
-void equalDisplayer() {
-
-    for(int i = 0; i < randomFunction; ++i) {
+    for(int i = 0; i < percentage; ++i) {
         cout << "=";
     }
     cout << endl;
 }
+
+void arrayDisplayer(unsigned int tab[], unsigned throws, unsigned elements) {
+
+    for(int i = 0; i < elements; ++i) {
+        cout << "Tableau [" << i << "]     " << tab[i];
+        equalDisplayer(tab[i]);
+        cout << endl;
+    }
+}
+

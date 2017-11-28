@@ -1,54 +1,51 @@
 /*
---------------------------------------------------------------------------------------------------------
-Laboratory : 06 Number of Day
-File       : main.cpp
-Author(s)  : Jonathan Zaehringer, Florian Schaufelberger
-Date       : 20.11.2017
+ -----------------------------------------------------------------------------------
+ Laboratory : 07 generateur aleatoire
+ File       : main.cpp
+ Author(s)  : Fulgencio Esteves Jorge-Andre and Schaufelberger Florian
+ Date       : 27.11.2017
 
-Aim        : Calculating number of FULL day between two dates.
-                
-                Data from user :
-                    - first date  : dd-mm-yyyy
-                    - second date : dd-mm-yyyy
+ Aim        :
 
-Comment(s) : The software take on board the leap year.
-                All input error are catch and redo the input demand.
+ Comment(s) :
 
-             If the user reverse date, the soft redo the inpud demand.
+ Compiler   : MinGW-g++ 4.9.2
+ -----------------------------------------------------------------------------------
+ */
 
-Compiler   : Apple LLVM version 8.0.0 (clang-800.0.42.1) or g++ (Ubuntu 5.4.0-6ubuntu1~16.04.4) 5.4.0
---------------------------------------------------------------------------------------------------------
-*/
 #include <cstdlib>
-#include <string>
+#include <cstdio>
 #include <iostream>
 
-#include "date.h"
 #include "io.h"
+#include "misc.h"
 
 using namespace std;
 
-int main() {
-    
+int main(){
+	const unsigned int ELEMENTS_MIN = 0,
+					   ELEMENTS_MAX = 100,
+					   TRIES_MIN = 0,
+					   TRIES_MAX = 1000;
+	const char YES = 'o',
+			    NO = 'n';
+	const string QUESTION_REDO     = string("Voulez-vous recommencer [") + YES + "," + NO +"] ? :";
+	const string QUESTION_ELEMENTS = string("nbre d'elements    [") + to_string(ELEMENTS_MIN) + ".." + to_string(ELEMENTS_MAX) + "] : ";
+    const string QUESTION_TRIES = string("nbre de lances  [") + to_string(TRIES_MIN) + ".." + to_string(TRIES_MAX) + "] : ";
 
-    const char  YES      = 'o',
-                NO       = 'n';
-    const int   MIN_ELEMENTS = 0,
-                MAX_ELEMENTS = 100,
-                MIN_THROWS   = 0,
-                MAX_THROWS   = 10000;
+	do {
+		cout << "Ce programme représente graphiquement la répartition "
+				"des valeurs générés aléatoirement" << endl;
 
+		unsigned int elements = getIntBetween(ELEMENTS_MIN, ELEMENTS_MAX, QUESTION_ELEMENTS),
+					 tries    = getIntBetween(TRIES_MIN, TRIES_MAX, QUESTION_TRIES),
+					 tab[elements] = {};
+		calculPercentage(tab, tries, elements);
+		arrayDisplayer(tab, tries, elements);
 
-    const string QUESTION_REDO          = string("Voulez-vous recommencer [") + YES + "," + NO + "] ? ",
-                 QUESTION_ELEMENT       = string("nbre d'elements ") + "[" + MIN_ELEMENTS + ".." + MAX_ELEMENTS + "] : ",
-                 QUESTION_THROWS        = string("nbre de lances ") + "[" + MIN_THROWS + ".." + MAX_THROWS + "] : ";
-    
-    // Input value
-    } while (wantsUserRedo(YES, NO, QUESTION_REDO));
+	} while (wantsUserRedo(YES,NO, QUESTION_REDO));
 
+	waitUserInteraction();
 
-    waitUserInteraction();
-
-    return EXIT_SUCCESS;
+	return EXIT_SUCCESS;
 }
-
